@@ -11,11 +11,11 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",  // Assuming your API routes are prefixed with /api
+      "src": "/api/(.*)",  
       "dest": "index.js"
     },
     {
-      "src": "/(.*)",  // Catch-all route for frontend
+      "src": "/(.*)", 
       "dest": "/dist/index.html"
     }
   ]
