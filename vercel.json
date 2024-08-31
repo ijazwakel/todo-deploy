@@ -5,13 +5,13 @@
       "use": "@vercel/node"
     },
     {
-      "src": "dist/**/*",  
+      "src": "dist/**",  
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",  
+      "src": "/todo/(.*)",  
       "dest": "index.js"
     },
     {
