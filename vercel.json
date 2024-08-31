@@ -1,27 +1,22 @@
 {
-    "builds": [
-      {
-        "src": "index.js",  
-        "use": "@vercel/node"
-      },
-         {
-        "src": "dist/",  
-        "use": "@vercel/static"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/todo/(.*)",
-        "dest": "index.js" 
-      },
-         {
-        "src": "/",
-        "dest": "dist/index.html" 
-      },
-        {
-        "src": "/(.+)",
-        "dest": "dist/$1" 
-      }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "index.js",  
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dist/**/*",  
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",  // Assuming your API routes are prefixed with /api
+      "dest": "index.js"
+    },
+    {
+      "src": "/(.*)",  // Catch-all route for frontend
+      "dest": "/dist/index.html"
+    }
+  ]
+}
